@@ -1,0 +1,37 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++ build active file",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${workspaceFolder}/main.cpp",
+                "${workspaceFolder}/glad.c",
+                "-I${workspaceFolder}", // Кажемо компілятору дивитися в корінь проєкту для інклюдів
+                "-o",
+                "${workspaceFolder}/main",
+                "-lglfw",
+                "-lGL",
+                "-ldl",
+                "-lpthread",
+                "-lX11",
+                "-lXxf86vm",
+                "-lXrandr",
+                "-lXi"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
